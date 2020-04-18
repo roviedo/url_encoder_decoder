@@ -4,3 +4,13 @@
     width: 50%;
     align-items: center;
 }
+
+.encoder-decoder-container textarea {
+    width: 100%;
+    height: 50px;
+    margin: 10px;
+}
+
+.encoder-decoder-container input {
+    margin: 5px;
+}
