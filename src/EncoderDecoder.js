@@ -12,13 +12,12 @@ class EncoderDecoder extends React.Component {
     }
 
     handleDecode = () => {
-        console.log('decode', this.state.text);
         const text = this.state.text;
         let decodedText = '';
         let i = 0;
         while (i < text.length) {
             if (text[i] === '%' && typeof characterDecodingMap[text[i]+ text[i+1] + text[i+2]] !== 'undefined') {
-                //TODO: For now we have simple characters encoded to 3 characters.
+                //TODO: For now we have simple characters encoded 2 characters after percent character.
                 decodedText += characterDecodingMap[text[i] + text[i+1] + text[i+2]];
                 i += 3;
             } else {
@@ -32,7 +31,6 @@ class EncoderDecoder extends React.Component {
     }
 
     handleEncode = () =>  {
-        console.log('encode');
         const text = this.state.text;
         let encodedText = '';
         for (let i = 0; i < text.length; i++) {
